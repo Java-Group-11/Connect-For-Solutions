@@ -1,0 +1,55 @@
+
+
+
+<div class="container-fluid">
+    <div class="row" >
+      <div class="col-4" ></div>
+        <div clas="col-md-5 logimg " style="background-color:white;margin-top: 50px; border-radius: 10px;">
+            <div class="text-center">
+              <br>
+                <h1>User Login</h1>
+
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <br>
+                <div class="formGroup" style="margin-left: 30px;margin-right: 30px;">
+                  <label fclass="form-label ">Email address</label>
+                  <input size=50; border-radius=50px; formControlName="email" [ngClass]="{'is-invalid':submitted && loginForm.get('email')?.errors}"  type="text" class="form-control" id="exampleInputName1" required>
+                    <div *ngIf="submitted && loginForm.get('email')?.errors" class = "text-danger">
+                  <!-- <div *ngIf="submitted && loginForm.get('name')?.errors" class = "text-danger"> -->
+                    <div *ngIf="submitted && loginForm.get('email')?.errors?.['required'] ">
+                   email is required
+
+                    </div>
+
+                  </div>
+                </div>
+                <br>
+                <div class="formGroup" style="margin-left: 30px;margin-right: 30px;">
+                  <label  class="form-label">Password</label>
+                  <input formControlName="password" [ngClass]="{'is-invalid':submitted && loginForm.get('password')?.errors}"  type="password" class="form-control" id="exampleInputName1" required>
+                    <!-- <div *ngIf="submitted && singupForm.get('name')?.errors" class = "text-danger"> -->
+                  <div *ngIf="submitted && loginForm.get('password')?.errors" class = "text-danger">
+                    <div *ngIf="submitted && loginForm.get('password')?.errors?.['required'] ">
+                    password is required
+
+                    </div>
+
+                  </div>
+                </div>
+              <!-- <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="role" name="role" formControlName="role" required>
+                  <label class="form-check-label" for="exampleCheck1">Admin</label>
+                </div>-->
+                <br>
+                <button type="submit" class="btn btn-primary button" style="margin-left: 200px;">Login</button>
+              </form>
+              <br>
+
+              <a style="margin-left: 150px; padding-bottom: 20px;" routerLink="/register">New User ? Click to Register !</a>
+              <br><br>
+
+        </div>
+        
+    </div>
+</div>

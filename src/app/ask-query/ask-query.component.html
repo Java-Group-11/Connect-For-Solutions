@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="body">
+        <div class="askQuestion">
+            <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+                <div>
+                    <h2>Ask Your Question</h2>
+                </div>
+                <!-- <div class="padding">
+                <select class="form-select" ngModel name="topic" aria-label="Default select example" required>
+                    <option selected disabled >Choose Topic</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                    <option value="SQL">SQL</option>
+                    <option value="Software">Software</option>
+                    <option value="Others">Others</option>
+
+                </select>
+            </div> -->
+                <div class="mb-3 padding">
+                    <label class="form-label">Title</label>
+                    <textarea class="form-control" ngModel name="que" rows="1" formControlName="title"
+                        required></textarea>
+                </div>
+                <div class="mb-3 padding">
+                    <label class="form-label">What is your Question?</label>
+                    <textarea class="form-control" ngModel name="que" rows="5" formControlName="questionBody"
+                        required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Upload photos here</label>
+                    <input class="form-control" type="file" multiple>
+                </div>
+                <div class="askQuestionButton">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

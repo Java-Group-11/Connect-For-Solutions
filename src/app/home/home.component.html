@@ -1,0 +1,80 @@
+<!-- <div class="nav-sider" >
+<a href="/askQuery" class="nav-link"  routerLink="askQuery">AskQuery</a>
+</div> -->
+<!-- <div class="container">
+
+<div class="row">
+
+
+<div class="col-2"></div>
+<div class="col-8">
+</div>
+
+<div class="col-3"></div>
+
+</div>
+
+
+</div> -->
+
+
+<!-- 
+<div class="container border rounded">
+    <div class="row">
+        <div class="col-2">
+            <p> 0 votes</p>
+            <p  >2 answers</p>
+            <p>15 views</p>
+
+        </div>
+
+        <div class="col-9">
+            <p class="title"> ESLint error - logical operator ill-formed in ngif?</p>
+            <p>I'm running into an eslint build error but I can't determine which lint rule is blocking it...</p>
+            <div class="row">
+                <div class="col-7 d-flex justify-content-end"><p>Bhuvi</p></div>
+                <div class="col-3"><p>22nd Oct 2022</p></div>
+            </div>
+             </div>
+             <div class="col-3"></div>
+    </div>
+</div> -->
+
+
+
+<div id="spacer" class="input-group flex-nowrap w-20 p-5 " >
+    <input   #search type="search" id = "search_input" class="form-control"  *ngIf="isLoggedIn()"  placeholder="Search" 
+    (change)="getValue(search.value)"  (keyup)="onKey(search.value)"  aria-label="Search" aria-describedby="addon-wrapping">
+    <button (change)="search()" class="btn btn-primary padding-left: 20px"  *ngIf="isLoggedIn()"> Search</button>
+    
+        <button class="btn btn-primary padding-left: 20px"  *ngIf="isLoggedIn()"routerLink="/askQuery">AskQuery</button>
+    
+</div>
+<div *ngFor="let quesAns of questions"> 
+
+
+    <div class="container border rounded">
+        <div class="row">
+            <div class="col-2">
+                <p>0 votes</p>
+                <p  >{{quesAns.question.answer}} answers</p>
+                <p>{{quesAns.question.views}} views</p>
+    
+            </div>
+    
+            <div class="col-9">
+                <a class="title" routerLink="/question/{{quesAns.question.questionId}}" on> {{quesAns.question.title}}      </a>
+                <p> {{quesAns.question.questionBody}}  </p>
+                <div class="row">
+                    <div class="col-7 d-flex justify-content-end"><p>{{quesAns.userName}}</p></div>
+                    <div class="col-3"><p>{{quesAns.question.date|date}}</p></div>
+                </div>
+                 </div>
+                 <div class="col-3"></div>
+        </div>
+    </div>
+    
+
+</div>
+
+

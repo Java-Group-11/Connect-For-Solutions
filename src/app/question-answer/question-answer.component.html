@@ -1,0 +1,91 @@
+<!-- <p>question-answer works!</p> -->
+<!-- {{q.question.questionBody}} -->
+
+<div class="container">
+
+    <div class="row border-bottom">
+        <div class="col-12">
+            <h1>{{q.question.title}}</h1>
+        </div>
+        <!-- <div class="row"> -->
+
+        <div class="col-2">
+            <p>Asked on <strong>
+                    {{q.question.date|date}}
+                </strong></p>
+        </div>
+        <div class="col-8">
+            <p>
+                Views <strong>
+                    {{q.question.views}}
+                </strong>
+            </p>
+        </div>
+
+        <!-- <hr  class="mt-2 mb-3"> -->
+        <!-- </div> -->
+    </div>
+
+    <div class="row border-bottom">
+        <!-- <div class="col-2">
+            <p>Id: {{q.question.questionId}}</p>
+        </div> -->
+        <div class="col-8">
+            <h3>Query <br> {{q.question.questionBody}}</h3>
+        </div>
+    </div>
+
+    <div class="row ans">
+        <h3>Answers</h3>
+        <!-- <div class="col-12">
+            Image {{q.question.image}}
+        </div> -->
+    </div>
+    <!-- <h1>Answers</h1> -->
+    <div *ngFor="let ans of answers">
+
+        <div class="container rounded">
+            <div class="row">
+                <div class="col-3">
+                    <p>{{ans.answer.likes}} likes</p>
+                  </div>
+                  <div class="col-9">
+                    <p>{{ans.answer.answerBody}} views</p>
+                  </div>
+                    
+                </div>
+
+                <div class="row border-bottom">
+                    <div class="col-7"></div>
+                    <div class="col-1"> <p>{{ans.userName}}</p>
+                     </div>
+                     <div class="col-1"></div>
+                     <div class="col-3">   <p>{{ans.answer.date | date}}</p></div>
+                </div>
+
+            </div>
+      <br>
+    
+    </div>
+
+    <div class="row border-bottom">
+
+        <div class="col-12 ">
+            <form [formGroup]="answerForm" (ngSubmit)="onSubmit()">
+                <textarea name="postedAnswer" id="" cols="147" rows="10" formControlName="answerBody"></textarea>
+                <button type="submit" class="btn btn-primary">Post Answer</button>
+                <br>
+            </form>
+    
+        </div>
+        <div class="col-12"></div>
+
+    </div>
+    
+
+    <!-- <div class="row">
+            <div class="col-12">
+                <p>{{q.question.answer}}</p>
+            </div>
+        </div> -->
+
